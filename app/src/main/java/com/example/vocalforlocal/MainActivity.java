@@ -13,7 +13,7 @@ import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
-    Button memberLogin;
+    Button memberLogin,BookService;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -30,6 +30,17 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(login);
             }
         });
+
+        BookService = (Button) findViewById(R.id.book);
+        BookService.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(MainActivity.this,"Bookservice",Toast.LENGTH_SHORT).show();
+                Intent bookservice = new Intent(MainActivity.this,BookServiceActivity.class);
+                startActivity(bookservice);
+            }
+        });
+
     }
 
     @Override
@@ -54,6 +65,9 @@ public class MainActivity extends AppCompatActivity {
                 return true;
             case R.id.homeItem:
                 // do your code
+
+                Intent home = new Intent(MainActivity.this,MainActivity.class);
+                startActivity(home);
                 return true;
             default:
                 return super.onOptionsItemSelected(item);
