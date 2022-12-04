@@ -2,6 +2,7 @@ package com.example.vocalforlocal;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
@@ -32,11 +33,18 @@ public class BookServiceActivity extends AppCompatActivity {
                             case R.id.painting:
                                 // do your code
                                 Toast.makeText(BookServiceActivity.this,"Clicked One to see",Toast.LENGTH_SHORT).show();
+                                Intent painting = new Intent(BookServiceActivity.this,PaintingActivity.class);
+                                startActivity(painting);
                                 return true;
                             case R.id.plumbing:
+
+                                Intent plumbing = new Intent(BookServiceActivity.this,PlumbingActivity.class);
+                                startActivity(plumbing);
                                 // do your code
                                 return true;
                             case R.id.carpentering:
+                                Intent carpentering = new Intent(BookServiceActivity.this,CarpenteringActivity.class);
+                                startActivity(carpentering);
                                 // do your code
                                 return true;
                             default:
