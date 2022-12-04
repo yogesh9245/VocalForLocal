@@ -48,7 +48,8 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(about);
                 return true;
             case R.id.ContactItem:
-
+                Intent contact = new Intent(MainActivity.this,ContactActivity.class);
+                startActivity(contact);
                 // do your code
                 return true;
             case R.id.homeItem:
