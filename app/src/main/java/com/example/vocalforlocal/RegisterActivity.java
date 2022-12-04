@@ -1,8 +1,13 @@
 package com.example.vocalforlocal;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
+import android.content.DialogInterface;
 import android.content.SharedPreferences;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -13,7 +18,7 @@ public class RegisterActivity extends AppCompatActivity {
 
     EditText username,password,phone,email;
     Button register;
-
+    SQLiteDatabase db;
     SharedPreferences sp;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,6 +34,9 @@ public class RegisterActivity extends AppCompatActivity {
 
         sp = getSharedPreferences("RegisterInfo",0);
 
+        db=openOrCreateDatabase("BookingDB", Context.MODE_PRIVATE, null);
+
+        db.execSQL("CREATE TABLE IF NOT EXISTS workerMember(username VARCHAR,password VARCHAR,phone number,email VARCHAR);");
 
         register.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -46,7 +54,37 @@ public class RegisterActivity extends AppCompatActivity {
                 editor.apply();
                 Toast.makeText(RegisterActivity.this,"User created",Toast.LENGTH_SHORT).show();
 
+                db.execSQL("INSERT INTO workerMember VALUES('"+username.getText()+"','"+password.getText()+ "','"+phone.getText()+"','"+ email.getText()+"');");
+                showMessage("Success", "Record added");
+
+                Cursor c = db.rawQuery("SELECT username,phone,email FROM workerMember", null);
+
+                StringBuffer buffer = new StringBuffer();
+                while (c.moveToNext()) {
+                    buffer.append("Username: " + c.getString(0) + "\n");
+                    buffer.append("Phone: " + c.getString(1) + "\n");
+                    buffer.append("Email: " + c.getString(2) + "\n\n");
+                }
+// Displaying all records
+                showMessage("Worker Details", buffer.toString());
+
             }
         });
+    }
+
+    public void showMessage(String title,String message)
+    {
+        AlertDialog.Builder builder=new AlertDialog.Builder(this);
+        builder.setCancelable(true);
+
+        builder.setPositiveButton("Ok", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                dialogInterface.cancel();
+            }
+        });
+        builder.setTitle(title);
+        builder.setMessage(message);
+        builder.show();
     }
 }
