@@ -16,7 +16,7 @@ import android.widget.Toast;
 
 public class RegisterActivity extends AppCompatActivity {
 
-    EditText username,password,phone,email;
+    EditText username,password,phone,email,designation;
     Button register;
     SQLiteDatabase db;
     SharedPreferences sp;
@@ -29,6 +29,7 @@ public class RegisterActivity extends AppCompatActivity {
         password = (EditText) findViewById(R.id.passwordLogin);
         phone = (EditText) findViewById(R.id.phoneLogin);
         email = (EditText) findViewById(R.id.emailLogin);
+        designation = (EditText) findViewById(R.id.designationLogin);
 
         register = (Button) findViewById(R.id.registerBtnregister);
 
@@ -36,7 +37,7 @@ public class RegisterActivity extends AppCompatActivity {
 
         db=openOrCreateDatabase("BookingDB", Context.MODE_PRIVATE, null);
 
-        db.execSQL("CREATE TABLE IF NOT EXISTS workerMember(username VARCHAR,password VARCHAR,phone number,email VARCHAR);");
+        db.execSQL("CREATE TABLE IF NOT EXISTS workingMember(username VARCHAR,password VARCHAR,phone number,email VARCHAR,designation VARCHAR);");
 
         register.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -45,6 +46,7 @@ public class RegisterActivity extends AppCompatActivity {
                 String passwordValue = password.getText().toString();
                 String phoneValue = phone.getText().toString();
                 String emailValue = email.getText().toString();
+//                String designationValue = designation.getText().toString();
 
                 SharedPreferences.Editor editor = sp.edit();
                 editor.putString("username",usernameValue);
@@ -54,20 +56,20 @@ public class RegisterActivity extends AppCompatActivity {
                 editor.apply();
                 Toast.makeText(RegisterActivity.this,"User created",Toast.LENGTH_SHORT).show();
 
-                db.execSQL("INSERT INTO workerMember VALUES('"+username.getText()+"','"+password.getText()+ "','"+phone.getText()+"','"+ email.getText()+"');");
+                db.execSQL("INSERT INTO workingMember VALUES('"+username.getText()+"','"+password.getText()+ "','"+phone.getText()+"','"+ email.getText()+"','"+designation.getText()+"');");
                 showMessage("Success", "Record added");
 
-                Cursor c = db.rawQuery("SELECT username,phone,email FROM workerMember", null);
+                Cursor c = db.rawQuery("SELECT username,phone,email,designation FROM workingMember", null);
 
                 StringBuffer buffer = new StringBuffer();
                 while (c.moveToNext()) {
                     buffer.append("Username: " + c.getString(0) + "\n");
                     buffer.append("Phone: " + c.getString(1) + "\n");
-                    buffer.append("Email: " + c.getString(2) + "\n\n");
+                    buffer.append("Email: " + c.getString(2) + "\n");
+                    buffer.append("Designation: " + c.getString(3) + "\n\n");
                 }
 // Displaying all records
                 showMessage("Worker Details", buffer.toString());
-
             }
         });
     }
