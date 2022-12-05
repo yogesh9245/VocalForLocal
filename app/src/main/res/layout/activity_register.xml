@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".RegisterActivity">
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Register"
+        android:textSize="40dp"
+        android:layout_centerHorizontal="true"
+        android:textStyle="bold"
+        android:id="@+id/registerTitle"
+        />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Username"
+        android:id="@+id/userLogin"
+        android:layout_below="@id/registerTitle"
+        android:textAlignment="center"
+        android:textSize="28dp"
+        android:inputType="text"
+        />
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Password"
+        android:id="@+id/passwordLogin"
+        android:layout_below="@id/userLogin"
+        android:textAlignment="center"
+        android:textSize="28dp"
+        android:inputType="textPassword"
+        />
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Phone"
+        android:id="@+id/phoneLogin"
+        android:layout_below="@id/passwordLogin"
+        android:textAlignment="center"
+        android:textSize="28dp"
+        android:inputType="phone"
+        />
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Email"
+        android:id="@+id/emailLogin"
+        android:layout_below="@id/phoneLogin"
+        android:textAlignment="center"
+        android:textSize="28dp"
+        android:inputType="textEmailAddress"
+        />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Designation"
+        android:id="@+id/designationLogin"
+        android:textSize="28dp"
+        android:textAlignment="center"
+        android:layout_below="@id/emailLogin"
+        android:inputType="text"
+        />
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Register"
+        android:id="@+id/registerBtnregister"
+        android:layout_below="@id/designationLogin"
+        android:layout_centerHorizontal="true"
+        android:textSize="28dp"
+        />
+
+</RelativeLayout>

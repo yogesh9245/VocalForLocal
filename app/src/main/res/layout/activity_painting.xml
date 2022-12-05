@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".PaintingActivity">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Painting"
+        android:textSize="40dp"
+        android:id="@+id/paintingTitle"
+        android:textStyle="bold"
+        android:layout_centerHorizontal="true"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Enter the details"
+        android:textSize="24dp"
+        android:textStyle="bold"
+        android:id="@+id/paintDetailsTitle"
+        android:layout_below="@id/paintingTitle"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="10dp"
+        />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="Enter your name"
+        android:textSize="24dp"
+        android:id="@+id/nameDetailPainting"
+        android:layout_below="@id/paintDetailsTitle"
+        android:layout_marginLeft="10dp"
+        android:inputType="text"
+        />
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="Enter your Phone Number"
+        android:textSize="24dp"
+        android:id="@+id/PhoneDetailPainting"
+        android:layout_below="@id/nameDetailPainting"
+        android:layout_marginLeft="10dp"
+        android:inputType="phone"
+        />
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="Enter your Address"
+        android:textSize="24dp"
+        android:id="@+id/AddressDetailPainting"
+        android:layout_below="@id/PhoneDetailPainting"
+        android:layout_marginLeft="10dp"
+        />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="Email id"
+        android:id="@+id/emailPaintingDetail"
+        android:layout_below="@id/AddressDetailPainting"
+        android:textSize="24dp"
+        android:layout_marginLeft="10dp"
+        android:inputType="textEmailAddress"
+        />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Submit"
+        android:textSize="20dp"
+        android:id="@+id/submitPainting"
+        android:layout_below="@id/emailPaintingDetail"
+        android:layout_centerHorizontal="true"
+        />
+
+  </RelativeLayout>
