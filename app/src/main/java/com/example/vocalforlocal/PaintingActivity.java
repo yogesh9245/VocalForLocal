@@ -25,7 +25,7 @@ public class PaintingActivity extends AppCompatActivity {
     String phoneNo;
     String message;
 
-    SQLiteDatabase db;
+    SQLiteDatabase db,db1;
     EditText name, phone,address,email;
     Button submitPainting;
     @Override
@@ -41,7 +41,9 @@ public class PaintingActivity extends AppCompatActivity {
         submitPainting = (Button)findViewById(R.id.submitPainting);
 
         db=openOrCreateDatabase("BookingDB", Context.MODE_PRIVATE, null);
+        db1=openOrCreateDatabase("BookingDB", Context.MODE_PRIVATE, null);
         db.execSQL("CREATE TABLE IF NOT EXISTS customersBook(name VARCHAR,phone number,address VARCHAR,email VARCHAR);");
+        db1.execSQL("CREATE TABLE IF NOT EXISTS workingMember(username VARCHAR,password VARCHAR,phone number,email VARCHAR,designation VARCHAR);");
 
         submitPainting.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -58,7 +60,7 @@ public class PaintingActivity extends AppCompatActivity {
 
                     sendSMSMessage();
 
-                    Cursor c = db.rawQuery("SELECT * FROM workingMember WHERE designation='"+"Painter"+"'", null);
+                    Cursor c = db1.rawQuery("SELECT username,phone,email,designation FROM workingMember WHERE designation = 'Painter'", null);
                     StringBuffer buffer = new StringBuffer();
                     while (c.moveToNext()) {
                         buffer.append("Name: " + c.getString(0) + "\n");
@@ -126,7 +128,7 @@ public class PaintingActivity extends AppCompatActivity {
                         && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
                     SmsManager smsManager = SmsManager.getDefault();
                     smsManager.sendTextMessage(phoneNo, null, message, null, null);
-                    Toast.makeText(getApplicationContext(), "SMS sent.",
+                    Toast.makeText(PaintingActivity.this, "SMS sent.",
                             Toast.LENGTH_LONG).show();
                 } else {
                     Toast.makeText(getApplicationContext(),

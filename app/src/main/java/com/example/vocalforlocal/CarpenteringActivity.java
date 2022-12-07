@@ -14,7 +14,7 @@ import android.widget.EditText;
 
 public class CarpenteringActivity extends AppCompatActivity {
 
-    SQLiteDatabase db;
+    SQLiteDatabase db,db1;
     EditText name, phone,address,email;
     Button submitCarpentary;
 
@@ -31,7 +31,10 @@ public class CarpenteringActivity extends AppCompatActivity {
         submitCarpentary = (Button)findViewById(R.id.submitCarpentary);
 
         db=openOrCreateDatabase("BookingDB", Context.MODE_PRIVATE, null);
+        db1=openOrCreateDatabase("BookingDB", Context.MODE_PRIVATE, null);
+
         db.execSQL("CREATE TABLE IF NOT EXISTS customersBook(name VARCHAR,phone number,address VARCHAR,email VARCHAR);");
+        db1.execSQL("CREATE TABLE IF NOT EXISTS workingMember(username VARCHAR,password VARCHAR,phone number,email VARCHAR,designation VARCHAR);");
 
         submitCarpentary.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -46,13 +49,13 @@ public class CarpenteringActivity extends AppCompatActivity {
                     showMessage("Success", "Record added");
                     clearText();
 
-                    Cursor c = db.rawQuery("SELECT * FROM customersBook", null);
+                    Cursor c = db1.rawQuery("SELECT username,phone,email,designation FROM workingMember WHERE designation = 'Carpenter'", null);
                     StringBuffer buffer = new StringBuffer();
                     while (c.moveToNext()) {
                         buffer.append("Name: " + c.getString(0) + "\n");
                         buffer.append("Phone: " + c.getString(1) + "\n");
-                        buffer.append("Address: " + c.getString(2) + "\n");
-                        buffer.append("Address: " + c.getString(3) + "\n\n");
+                        buffer.append("Email: " + c.getString(2) + "\n");
+                        buffer.append("Designation: " + c.getString(3) + "\n\n");
                     }
 // Displaying all records
                     showMessage("Customer Details", buffer.toString());

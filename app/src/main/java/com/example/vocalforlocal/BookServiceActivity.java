@@ -28,11 +28,11 @@ public class BookServiceActivity extends AppCompatActivity {
 
                 popup.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
                     public boolean onMenuItemClick(MenuItem item) {
-                        Toast.makeText(BookServiceActivity.this,"You Clicked : " + item.getTitle(), Toast.LENGTH_SHORT).show();
+//                        Toast.makeText(BookServiceActivity.this,"You Clicked : " + item.getTitle(), Toast.LENGTH_SHORT).show();
                         switch (item.getItemId()) {
                             case R.id.painting:
                                 // do your code
-                                Toast.makeText(BookServiceActivity.this,"Clicked One to see",Toast.LENGTH_SHORT).show();
+//                                Toast.makeText(BookServiceActivity.this,"Clicked One to see",Toast.LENGTH_SHORT).show();
                                 Intent painting = new Intent(BookServiceActivity.this,PaintingActivity.class);
                                 startActivity(painting);
                                 return true;
