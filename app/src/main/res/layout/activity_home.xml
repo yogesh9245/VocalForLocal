@@ -15,6 +15,15 @@
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
         android:textStyle="bold"
+        />
 
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/getCustomerDetails"
+        android:text="Show Customer Details"
+        android:layout_below="@id/textView"
+        android:layout_centerHorizontal="true"
+        android:textSize="24dp"
         />
 </RelativeLayout>

@@ -7,63 +7,67 @@
     tools:context=".PlumbingActivity">
 
     <TextView
+        android:layout_marginTop="20dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/plubmingTitle"
         android:text="Plumbing Service"
-        android:textSize="28dp"
+        android:textSize="30dp"
         android:textStyle="bold"
         android:layout_centerHorizontal="true"
+        android:textColor="#ff5b9c"
         />
 
     <TextView
+        android:textColor="#ff7351"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/plubmingDetailTitle"
         android:text="Plumbing Details "
         android:layout_below="@id/plubmingTitle"
-        android:textSize="28dp"
+        android:textSize="22dp"
         android:textStyle="bold"
         android:layout_centerHorizontal="true"
         />
 
     <EditText
-        android:layout_width="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Enter your name"
-        android:textSize="24dp"
+        android:hint="Name"
+        android:textSize="15dp"
         android:id="@+id/nameDetailPlumbing"
         android:layout_below="@id/plubmingDetailTitle"
         android:layout_marginLeft="10dp"
         android:inputType="text"
         />
     <EditText
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Enter your Phone Number"
-        android:textSize="24dp"
+        android:hint="Phone Number"
+        android:textSize="15dp"
         android:id="@+id/PhoneDetailPlumbing"
         android:layout_below="@id/nameDetailPlumbing"
         android:layout_marginLeft="10dp"
         android:inputType="phone"
         />
     <EditText
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Enter your Address"
-        android:textSize="24dp"
+        android:hint="Address"
+        android:textSize="15dp"
         android:id="@+id/AddressDetailPlumbing"
         android:layout_below="@id/PhoneDetailPlumbing"
         android:layout_marginLeft="10dp"
         />
 
     <EditText
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Email id"
         android:id="@+id/emailPlumbingDetail"
         android:layout_below="@id/AddressDetailPlumbing"
-        android:textSize="24dp"
+        android:textSize="15dp"
         android:layout_marginLeft="10dp"
         android:inputType="textEmailAddress"
         />
@@ -76,6 +80,7 @@
         android:id="@+id/submitPlumbing"
         android:layout_below="@id/emailPlumbingDetail"
         android:layout_centerHorizontal="true"
+        android:backgroundTint="#ff5b9c"
         />
 
 </RelativeLayout>

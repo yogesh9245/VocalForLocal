@@ -62,8 +62,9 @@ public class PlumbingActivity extends AppCompatActivity {
                     }
 // Displaying all records
                     showMessage("Customer Details", buffer.toString());
-//                    addNotification();
+
                 }
+//                addNotification();
             }
         });
     }
@@ -102,7 +103,7 @@ public class PlumbingActivity extends AppCompatActivity {
                         .setContentTitle("Notifications Example")
                         .setContentText("This is a test notification");
 
-        Intent notificationIntent = new Intent(this, MainActivity.class);
+        Intent notificationIntent = new Intent(this, NotifyActivity.class);
         PendingIntent contentIntent = PendingIntent.getActivity(this, 0, notificationIntent,
                 PendingIntent.FLAG_UPDATE_CURRENT);
         builder.setContentIntent(contentIntent);

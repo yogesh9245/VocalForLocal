@@ -7,52 +7,69 @@
     tools:context=".MemberLogin">
 
     <TextView
+        android:layout_marginTop="20dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Login"
         android:textSize="40dp"
+        android:textColor="#ff5b9c"
         android:layout_centerHorizontal="true"
         android:textStyle="bold"
         android:id="@+id/loginTitle"
         />
 
+    <ImageView
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_marginLeft="120dp"
+        android:layout_marginTop="140dp"
+        android:layout_marginBottom="70dp"
+        android:src="@drawable/logo" />
     <EditText
+        android:layout_marginTop="250dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:textSize="20dp"
         android:hint="Username"
         android:id="@+id/loginUsername"
         android:layout_below="@id/loginTitle"
-        android:textSize="28dp"
         android:textAlignment="center"
         android:inputType="text"
         />
 
     <EditText
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:textSize="20dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/passwordLogin"
         android:layout_below="@id/loginUsername"
         android:hint="Password"
         android:textAlignment="center"
-        android:textSize="28dp"
         android:inputType="textPassword"
         />
 
     <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Login"
+        android:layout_marginTop="20dp"
         android:id="@+id/loginBtn"
+        android:layout_width="184dp"
+        android:layout_height="wrap_content"
         android:layout_below="@id/passwordLogin"
-        />
+        android:layout_marginLeft="10dp"
+        android:backgroundTint="#ff5b9c"
+        android:text="Login" />
 
     <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Register"
+        android:layout_marginTop="20dp"
         android:id="@+id/loginRegister"
+        android:layout_width="194dp"
+        android:layout_height="wrap_content"
         android:layout_below="@id/passwordLogin"
-        android:layout_toRightOf = "@id/loginBtn"
-        android:layout_marginLeft="80dp"
-        />
+        android:layout_marginLeft="12dp"
+        android:backgroundTint="#ff7351"
+        android:layout_toRightOf="@id/loginBtn"
+        android:text="Register" />
 </RelativeLayout>

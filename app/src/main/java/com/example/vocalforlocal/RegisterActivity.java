@@ -46,7 +46,7 @@ public class RegisterActivity extends AppCompatActivity {
                 String passwordValue = password.getText().toString();
                 String phoneValue = phone.getText().toString();
                 String emailValue = email.getText().toString();
-//                String designationValue = designation.getText().toString();
+                String designationValue = designation.getText().toString();
 
                 SharedPreferences.Editor editor = sp.edit();
                 editor.putString("username",usernameValue);
@@ -56,20 +56,13 @@ public class RegisterActivity extends AppCompatActivity {
                 editor.apply();
                 Toast.makeText(RegisterActivity.this,"User created",Toast.LENGTH_SHORT).show();
 
+
+
                 db.execSQL("INSERT INTO workingMember VALUES('"+username.getText()+"','"+password.getText()+ "','"+phone.getText()+"','"+ email.getText()+"','"+designation.getText()+"');");
                 showMessage("Success", "Record added");
 
-                Cursor c = db.rawQuery("SELECT username,phone,email,designation FROM workingMember", null);
 
-                StringBuffer buffer = new StringBuffer();
-                while (c.moveToNext()) {
-                    buffer.append("Username: " + c.getString(0) + "\n");
-                    buffer.append("Phone: " + c.getString(1) + "\n");
-                    buffer.append("Email: " + c.getString(2) + "\n");
-                    buffer.append("Designation: " + c.getString(3) + "\n\n");
-                }
-// Displaying all records
-                showMessage("Worker Details", buffer.toString());
+                showMessage("Registeration Info", "Your registration is successfull");
             }
         });
     }

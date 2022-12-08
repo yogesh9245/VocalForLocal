@@ -9,62 +9,75 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
         android:id="@+id/carpenteringTitle"
         android:text="Carpentering Service"
-        android:textSize="28dp"
+        android:textSize="30dp"
         android:textStyle="bold"
+        android:textColor="#ff58a1"
         android:layout_centerHorizontal="true"
         />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
         android:id="@+id/carpenteringDetailTitle"
         android:text="Carpentery Detail"
+        android:textColor="#ff7351"
         android:layout_below="@id/carpenteringTitle"
-        android:textSize="28dp"
+        android:textSize="20dp"
         android:textStyle="bold"
         android:layout_centerHorizontal="true"
         />
 
     <EditText
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Enter your name"
-        android:textSize="24dp"
+        android:hint="Name"
+        android:layout_marginTop="20dp"
+        android:textSize="15dp"
         android:id="@+id/nameDetailCarpentary"
         android:layout_below="@id/carpenteringDetailTitle"
         android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
         android:inputType="text"
         />
     <EditText
-        android:layout_width="wrap_content"
+        android:layout_marginRight="10dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Enter your Phone Number"
-        android:textSize="24dp"
+        android:layout_marginTop="20dp"
+        android:textSize="15dp"
+        android:hint="Phone Number"
         android:id="@+id/PhoneDetailCarpentary"
         android:layout_below="@id/nameDetailCarpentary"
         android:layout_marginLeft="10dp"
         android:inputType="phone"
         />
     <EditText
-        android:layout_width="wrap_content"
+        android:layout_marginRight="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Enter your Address"
-        android:textSize="24dp"
+        android:hint="Address"
+        android:layout_marginTop="20dp"
+        android:textSize="15dp"
         android:id="@+id/AddressDetailCarpentary"
         android:layout_below="@id/PhoneDetailCarpentary"
-        android:layout_marginLeft="10dp"
+
         />
 
     <EditText
-        android:layout_width="wrap_content"
+        android:layout_marginRight="10dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Email id"
         android:id="@+id/emailCarpentaryDetail"
         android:layout_below="@id/AddressDetailCarpentary"
-        android:textSize="24dp"
         android:layout_marginLeft="10dp"
+        android:layout_marginTop="20dp"
+        android:textSize="15dp"
         android:inputType="textEmailAddress"
         />
 
@@ -72,10 +85,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Submit"
-        android:textSize="20dp"
+        android:textSize="15dp"
         android:id="@+id/submitCarpentary"
         android:layout_below="@id/emailCarpentaryDetail"
         android:layout_centerHorizontal="true"
+        android:backgroundTint="#ff58a1"
         />
 
 </RelativeLayout>

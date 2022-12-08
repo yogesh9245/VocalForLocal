@@ -10,9 +10,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Book a Service"
-        android:textSize="28dp"
+        android:textSize="40dp"
         android:id="@+id/bookServiceTitle"
         android:textStyle="bold"
+        android:textColor="#ff58a1"
         android:layout_centerHorizontal="true"
         android:layout_marginVertical="20dp"
         />
@@ -20,11 +21,12 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Book the service"
+        android:text="Book  your  service"
+        android:backgroundTint="#ff7351"
         android:id="@+id/bookserviceBtn"
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
-        android:textSize="28dp"
+        android:textSize="20dp"
         android:textStyle="bold"
 
         />

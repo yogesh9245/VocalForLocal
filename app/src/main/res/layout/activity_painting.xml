@@ -8,76 +8,84 @@
     tools:context=".PaintingActivity">
 
     <TextView
+        android:textColor="#ff5b9c"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Painting"
         android:textSize="40dp"
+        android:layout_marginTop="20dp"
         android:id="@+id/paintingTitle"
         android:textStyle="bold"
         android:layout_centerHorizontal="true"
         />
 
     <TextView
+        android:textColor="#ff7351"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Enter the details"
-        android:textSize="24dp"
+        android:textSize="20dp"
         android:textStyle="bold"
         android:id="@+id/paintDetailsTitle"
         android:layout_below="@id/paintingTitle"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="20dp"
         android:layout_marginLeft="10dp"
         />
 
     <EditText
-        android:layout_width="wrap_content"
+        android:layout_marginRight="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Enter your name"
-        android:textSize="24dp"
+        android:hint="Name"
+        android:textSize="15dp"
         android:id="@+id/nameDetailPainting"
         android:layout_below="@id/paintDetailsTitle"
-        android:layout_marginLeft="10dp"
         android:inputType="text"
         />
     <EditText
-        android:layout_width="wrap_content"
+        android:layout_marginRight="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Enter your Phone Number"
-        android:textSize="24dp"
+        android:hint="Phone Number"
+        android:textSize="15dp"
         android:id="@+id/PhoneDetailPainting"
         android:layout_below="@id/nameDetailPainting"
-        android:layout_marginLeft="10dp"
         android:inputType="phone"
         />
     <EditText
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Enter your Address"
-        android:textSize="24dp"
+        android:hint="Address"
+        android:textSize="15dp"
         android:id="@+id/AddressDetailPainting"
         android:layout_below="@id/PhoneDetailPainting"
+        android:layout_marginRight="10dp"
         android:layout_marginLeft="10dp"
         />
 
     <EditText
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Email id"
         android:id="@+id/emailPaintingDetail"
         android:layout_below="@id/AddressDetailPainting"
-        android:textSize="24dp"
+        android:textSize="15dp"
         android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
         android:inputType="textEmailAddress"
         />
 
     <Button
+        android:backgroundTint="#ff5b9c"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Submit"
-        android:textSize="20dp"
+        android:textSize="15dp"
         android:id="@+id/submitPainting"
         android:layout_below="@id/emailPaintingDetail"
         android:layout_centerHorizontal="true"
         />
 
-  </RelativeLayout>
+</RelativeLayout>
